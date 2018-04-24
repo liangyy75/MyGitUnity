@@ -37,6 +37,12 @@ public class FirstSceneControl : MonoBehaviour, ISceneControl, IUserAction {
         if(actionManager.getDiskNumber() == 0 && gameState == GameState.RUNNING)
         {
             gameState = GameState.ROUND_FINISH;
+            gameState = GameState.ROUND_FINISH;
+            if(actionMode == ActionMode.PHYSIC)
+            {
+                gameState = GameState.FUNISH;
+                return;
+            }
             if(currentRound == 2)
             {
                 gameState = GameState.FUNISH;
